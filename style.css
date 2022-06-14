@@ -1,0 +1,67 @@
+:root {
+    --black: #0c0c0c;
+    --white: #f4f3f4;
+    --cian: #6185f8;
+    --green: #043717;
+    --brown: #954b0c;
+    --yellow: #ffc3b8;
+}
+
+*,
+*::after,
+*::before {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    background-color: var(--cian);
+    color: var(--white);
+    font-family: sans-serif;
+    font-size: 1.2rem;
+    font-weight: 700;
+    height: 100vh;
+    text-align: center;
+}
+
+.container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 4rem;
+    height: 100%;
+}
+
+h5 {
+    font-size: 2rem;
+    font-weight: 800;
+    text-transform: uppercase;
+    color: var(--green);
+}
+
+p {
+    font-size: 1.2rem;
+    font-weight: 400;
+}
+
+button {
+    cursor: pointer;
+    border: none;
+    padding: 1rem 3rem;
+    text-transform: uppercase;
+    font-weight: 800;
+    font-size: 1.2rem;
+    border-radius: 2px;
+    background-color: var(--brown);
+    color: var(--yellow);
+    box-shadow: 3px 3px var(--black);
+
+}
+
+#start-timer img,
+#stop-timer img {
+    width: 1rem;
+    height: auto;
+}
