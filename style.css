@@ -2,7 +2,8 @@
     --black: #0c0c0c;
     --white: #f4f3f4;
     --cian: #6185f8;
-    --green: #043717;
+    --dark-green: #043717;
+    --light-green: #43b047;
     --brown: #954b0c;
     --yellow: #ffc3b8;
 }
@@ -38,7 +39,7 @@ h5 {
     font-size: 2rem;
     font-weight: 800;
     text-transform: uppercase;
-    color: var(--green);
+    color: var(--dark-green);
 }
 
 p {

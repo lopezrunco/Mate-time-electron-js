@@ -1,6 +1,6 @@
 const d = document,
-    workTime = 2,
-    restTime = 1,
+    workTime = 25,
+    restTime = 5,
     $timer = d.getElementById('timer'),
     $fixedInfo = d.getElementById('fixed-info'),
     $currentInfo = d.getElementById('currentInfo'),
@@ -10,9 +10,9 @@ const d = document,
     workAlarm = new Audio("./assets/work-alarm.mp3"),
     restAlarm = new Audio("./assets/rest-alarm.mp3")
 
-$fixedInfo.innerHTML = `<p>Code time: <b>${workTime} min | </b>Rest time: <b>${restTime} min</b></p>`
-$timer.innerText = `Hi, dev`
-$currentInfo.innerHTML = `<p>It's time to write some code<p>`
+$fixedInfo.innerHTML = `<p>Work time: <b>${workTime} min | </b>Rest time: <b>${restTime} min</b></p>`
+$timer.innerText = `Hi, Damian`
+$currentInfo.innerHTML = `<p>It's time to work<p>`
 $stopBtn.style.display = 'none'
 
 const work = () => {
@@ -22,7 +22,8 @@ const work = () => {
     workAlarm.play()
     $startBtn.style.display = 'none'
     $stopBtn.style.display = 'block'
-    $timer.innerText = 'Code time'
+    $timer.innerText = 'Work time'
+    document.body.style.backgroundColor = '#6185f8'
 
     let workingInterval = setInterval(() => {
         diference = stopWorkTime - new Date().getTime()
@@ -31,7 +32,7 @@ const work = () => {
             clearInterval(workingInterval)
             rest()
         }
-    }, 1000)
+    }, 0)
 }
 
 const rest = () => {
@@ -40,21 +41,18 @@ const rest = () => {
     restAlarm.play()
     $timer.innerText = 'Mate time'
     $currentInfo.innerHTML = `<p><b>Chill out</b></p>`
+    document.body.style.backgroundColor = '#43b047'
 
     let restInterval = setInterval(() => {
         if (new Date().getTime() > stopRestTime.getTime()) {
             clearInterval(restInterval)
             work()
         }
-    }, 1000)
+    }, 0)
 }
 
 const resetTimer = () => {
-    $timer.innerText = 'Stopped'
-    $currentInfo.innerHTML = `<p>Reseting timer...</p>`
-    $startBtn.style.display = 'block'
-    $stopBtn.style.display = 'none'
-    setTimeout(() => location.reload(), 2000);
+    location.reload()
 }
 
 $startBtn.addEventListener('click', e => work())
