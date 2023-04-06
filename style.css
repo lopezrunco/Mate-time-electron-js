@@ -1,11 +1,10 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,400;0,700;0,900;1,100;1,400;1,700;1,900&display=swap');
+
 :root {
-    --black: #0c0c0c;
     --white: #f4f3f4;
-    --cian: #6185f8;
-    --dark-green: #043717;
-    --light-green: #43b047;
-    --brown: #954b0c;
-    --yellow: #ffc3b8;
+    --selection: #9e9e9e59;
+    --cian: #00768db6;
+    --brown: #8d0500b6;
 }
 
 *,
@@ -16,14 +15,33 @@
     padding: 0;
 }
 
+::selection {
+    background-color: var(--selection);
+}
+
 body {
-    background-color: var(--cian);
+    background-image: url('./assets/stopped.jpg');
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
     color: var(--white);
-    font-family: sans-serif;
+    font-family: 'Poppins', sans-serif;
     font-size: 1.2rem;
     font-weight: 700;
     height: 100vh;
     text-align: center;
+}
+
+body.stopped {
+    background-image: url('./assets/stopped.jpg');
+}
+
+body.started {
+    background-image: url('./assets/started.jpg');
+}
+
+body.started h5 {
+    color: var(--cian);
 }
 
 .container {
@@ -39,7 +57,7 @@ h5 {
     font-size: 2rem;
     font-weight: 800;
     text-transform: uppercase;
-    color: var(--dark-green);
+    color: var(--brown);
 }
 
 p {
@@ -47,22 +65,28 @@ p {
     font-weight: 400;
 }
 
+span {
+    font-size: 1rem;
+    font-weight: 400;
+}
+
 button {
     cursor: pointer;
-    border: none;
     padding: 1rem 3rem;
     text-transform: uppercase;
     font-weight: 800;
     font-size: 1.2rem;
-    border-radius: 2px;
-    background-color: var(--brown);
-    color: var(--yellow);
-    box-shadow: 3px 3px var(--black);
-
+    color: var(--white);
+    background: #ffffff40;
+    box-shadow: 0 8px 32px 0 #5d5d5d5e;
+    backdrop-filter: blur(4px);
+    -webkit-backdrop-filter: blur(4px);
+    border-radius: 10px;
+    border: 1px solid #ffffff2e;
+    transition: all ease-in-out .25s;
 }
 
-#start-timer img,
-#stop-timer img {
-    width: 1rem;
-    height: auto;
+button:hover,
+button:active {
+    background: #ffffff1a;
 }

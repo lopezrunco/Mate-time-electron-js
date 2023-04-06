@@ -1,6 +1,7 @@
 const d = document,
     workTime = 25,
     restTime = 5,
+    userName = 'Damian',
     $timer = d.getElementById('timer'),
     $fixedInfo = d.getElementById('fixed-info'),
     $currentInfo = d.getElementById('currentInfo'),
@@ -10,9 +11,9 @@ const d = document,
     workAlarm = new Audio("./assets/work-alarm.mp3"),
     restAlarm = new Audio("./assets/rest-alarm.mp3")
 
-$fixedInfo.innerHTML = `<p>Work time: <b>${workTime} min | </b>Rest time: <b>${restTime} min</b></p>`
-$timer.innerText = `Hi, Damian`
-$currentInfo.innerHTML = `<p>It's time to work<p>`
+$fixedInfo.innerHTML = `<span>Work time: <b>${workTime} min<br></b>Rest time: <b>${restTime} min</b></span>`
+$timer.innerText = `Hi, ${userName}`
+$currentInfo.innerHTML = `<p>It's motion time!<p>`
 $stopBtn.style.display = 'none'
 
 const work = () => {
@@ -23,7 +24,7 @@ const work = () => {
     $startBtn.style.display = 'none'
     $stopBtn.style.display = 'block'
     $timer.innerText = 'Work time'
-    document.body.style.backgroundColor = '#6185f8'
+    document.body.classList.add('started')
 
     let workingInterval = setInterval(() => {
         diference = stopWorkTime - new Date().getTime()
@@ -41,7 +42,7 @@ const rest = () => {
     restAlarm.play()
     $timer.innerText = 'Mate time'
     $currentInfo.innerHTML = `<p><b>Chill out</b></p>`
-    document.body.style.backgroundColor = '#43b047'
+    document.body.classList.add('stopped')
 
     let restInterval = setInterval(() => {
         if (new Date().getTime() > stopRestTime.getTime()) {

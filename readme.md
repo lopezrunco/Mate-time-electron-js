@@ -10,7 +10,7 @@
 <h3 align="center">Mate-time-electron-js</h3>
 
   <p align="center">
-    Just a simple app to track the time I spend writing code.
+    Just a simple app to track the working time.
     <br />
     <a href="https://github.com/lopezrunco/Mate-time-electron-js"><strong>Explore the docs »</strong></a>
     <br />
