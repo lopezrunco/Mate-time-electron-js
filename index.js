@@ -13,7 +13,7 @@ const d = document,
 
 $fixedInfo.innerHTML = `<span>Work time: <b>${workTime} min<br></b>Rest time: <b>${restTime} min</b></span>`
 $timer.innerText = `Hi, ${userName}`
-$currentInfo.innerHTML = `<p>It's motion time!<p>`
+$currentInfo.innerHTML = `<p>Time to work<p>`
 $stopBtn.style.display = 'none'
 
 const work = () => {

@@ -37,7 +37,7 @@
         <li><a href="#installation">Installation</a></li>
       </ul>
     </li>
-    <li><a href="#contributing">Contributing</a></li>
+    <li><a href="#script-version">Script version</a></li>
   </ol>
 </details>
 
@@ -95,15 +95,30 @@ In my daily work, I often found myself with exhausted eyes in front of my comput
 
 <p align="right">(<a href="#top">back to top</a>)</p>
 
+## Script version
 
+After switching to Arch Linux, I decided to adopt a minimalist approach. Thus, I developed a basic script that runs in Bash, providing screen alerts instead of sound notifications.
 
-<!-- CONTRIBUTING -->
-## Contributing
+```sh
+  work_alert() {
+    zenity --info --title="Work time" --text="Time to code!" --no-markup --width=250 --timeout=0
+  }
 
-Contributions are what make the open source community such an amazing place to learn, inspire, and create. Any contributions you make are **greatly appreciated**.
+  mate_alert() {
+    zenity --info --title="Mate time" --text="Take a rest!" --no-markup --width=250 --timeout=0
+  }
 
-If you have a suggestion that would make this better, please fork the repo and create a pull request. You can also simply open an issue with the tag "enhancement".
-Don't forget to give the project a star! Thanks again!
+  # Main loop
+  while true; do
+      # Display alert every 25 minutes
+      work_alert
+      sleep $((25 * 60))
+
+      # Display alert every 5 minutes
+      mate_alert
+      sleep $((5 * 60))
+  done
+```
 
 <p align="right">(<a href="#top">back to top</a>)</p>
 
